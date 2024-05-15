@@ -16,14 +16,15 @@ def encrypt_image(image_path, key=None):
 
     # Perform XOR operation between the image array and the key
     encrypted_array = np.bitwise_xor(image_array, key)
+    #This is just what encrypts the image to the encrypted array
 
     # Convert the encrypted array back to an image
-    encrypted_image = Image.fromarray(encrypted_array)
+    encrypted_image = Image.fromarray(encrypted_array)#it takes the encrypted array back to an image form
     
     return encrypted_image, key  # Return the encrypted image and the key used
 
 # Function to decrypt an encrypted image using XOR operation
-def decrypt_image(image_path, key):
+def decrypt_image(image_path, key):#This decrypts the image using the key
     # Open the encrypted image using Pillow
     encrypted_image = Image.open(image_path)
     
@@ -45,7 +46,7 @@ def save_image(image, path):
 # Example usage of the functions
 if __name__ == "__main__":
     # Example image paths
-    original_image_path = 'ytdr.png'
+    original_image_path = 'ytdr.png'#An image that is located in the device
     encrypted_image_path = 'encrypted_ytdr.png'
     decrypted_image_path = 'decrypted.png'
 
